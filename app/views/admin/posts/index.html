@@ -1,0 +1,50 @@
+{% extends "layouts/default.html" %}
+{% block title %} Posts Pages {% endblock %}
+{% block content %}
+{% include 'layouts/sidebar.html' %}
+    <div id="content">
+        <div class="table-information">
+            <div class="title"> <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>&nbsp; Posts Data </div>
+            <div class="right">
+                <a href="posts/create" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &nbsp; Add New
+                </a>
+            </div>
+        </div>
+        <div class="tables">
+            {% include 'notification/errors.html' %} {% include 'notification/error.html' %} {% include 'notification/success.html' %}
+			<table class="table table-bordered table-condensed table-hover table-striped" id="example">
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Slug</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% if (posts | length > 0) %}
+					{% for post in posts %}
+					<tr>
+						<td>{{ post.title }}</td>
+						<td>{{ post.slug }}</td>
+						<td>
+							<a href="posts/{{ post.id }}/edit" class="form-edit" title="Edit">
+								<button type="button" class="btn btn-default btn-xs" aria-label="Left Align">
+	                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+	                            </button>
+                            </a>
+							<form method="post" action="posts/{{ post.id }}" class="form-delete">
+								<input type="hidden" name="_METHOD" value="DELETE">
+	                            <button type="submit" class="btn btn-default btn-xs" aria-label="Left Align" title="Delete">
+	                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+	                            </button>
+							</form>
+						</td>
+					</tr>
+					{% endfor %}
+					{% endif %}
+				</tbody>
+			</table>
+		</div>
+    </div>
+{% endblock %}

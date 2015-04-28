@@ -1,0 +1,10 @@
+    <div id="sidebar">
+        <div class="menu-information">
+            Menu Information
+        </div>
+        <ul class="sidebar-nav">
+            <li{% if (siteUrl('/admin/home') == currentUrl()) %} class="active" {% endif %}><a href="{{ baseUrl() }}/admin/home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp; Dashboard</a></li>
+            <li{% if (siteUrl('/admin/posts') == currentUrl()) %} class="active" {% endif %}><a href="{{ baseUrl() }}/admin/posts"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>&nbsp; Posts</a></li>
+            <li{% if (siteUrl('/admin/users') == currentUrl()) %} class="active" {% endif %}><a href="{{ baseUrl() }}/admin/users"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; Users</a></li>
+        </ul>
+    </div>

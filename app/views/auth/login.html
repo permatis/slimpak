@@ -1,0 +1,53 @@
+{% extends "layouts/default.html" %}
+{% block title %} Login User {% endblock %}
+{% block content %}
+<div id="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-1">
+                <div class="table-information">
+                    <div class="title">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; Login User
+                    </div>
+                    <div class="right">
+                        <a href="register" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> &nbsp; Register </a>
+                    </div>
+                </div>
+                <div class="tables">
+                    {% include 'notification/errors.html' %} {% include 'notification/error.html' %} {% include 'notification/success.html' %}
+                    <form action="login" method="post" class="form-horizontal">
+                    	<input type="hidden"  name="token" id="token" value="{{ token }}">
+                    	<div class="form-group">
+                            <label for="email" class="col-sm-3 control-label">Email</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="email" class="form-control">
+                            </div>
+                        </div>
+                    	<div class="form-group">
+                            <label for="password" class="col-sm-3 control-label">Password</label>
+                            <div class="col-sm-9">
+                    	       <input type="password" name="password" class="form-control">
+                           </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-9">
+                            <label for="remember" class="checkbox">
+                                <input name="remember" type="checkbox"> Remember Me
+                            </label>
+                            <div class="reset">
+                                <a href="reset">Forget Password</a>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-9">
+                    	       <input type="submit" value="Login" class="btn btn-success" class="form-group">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

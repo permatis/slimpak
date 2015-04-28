@@ -1,0 +1,57 @@
+{% extends "layouts/default.html" %}
+{% block title %} Create Posts {% endblock %}
+{% block content %}
+    {% include 'layouts/sidebar.html' %}
+    <div id="content">
+        <div class="table-information">
+            <div class="title"> <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp; Updated Users </div>
+            <div class="right">
+                <a href="{{ baseUrl() }}/admin/users" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> &nbsp; Back
+                </a>
+            </div>
+        </div>
+        <div class="tables">
+            {% include 'notification/errors.html' %} {% include 'notification/error.html' %} {% include 'notification/success.html' %}
+            <form action="../{{ user.id }}" method="post" class="form-horizontal">
+                <input type="hidden" name="_METHOD" value="PUT">
+                <input type="hidden"  name="token" id="token" value="{{ token }}">
+                <div class="form-group">
+                    <label for="email" class="col-sm-2 control-label">First Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" value="{{ user.email }}" class="form-control" disabled="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="first_name" class="col-sm-2 control-label">First Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="first_name" value="{{ user.first_name }}" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="last_name" class="col-sm-2 control-label">Last Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="last_name" value="{{ user.last_name }}" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-2 control-label">Password</label>
+                    <div class="col-sm-10">
+                        <input type="password" name="password" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password_confirmation" class="col-sm-2 control-label">Password Confirmation</label>
+                    <div class="col-sm-10">
+                        <input type="password" name="password_confirmation" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input type="submit" value="Updated" class="btn btn-primary">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

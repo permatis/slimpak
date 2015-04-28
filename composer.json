@@ -1,0 +1,28 @@
+{
+    "name": "slimpak/pasar",
+    "description": "Create simply ecommerce with Slim Framework",
+    "authors": [
+        {
+            "name": "Defri Fajar Utomo",
+            "email": "defriblackertz@gmail.com"
+        }
+    ],
+    "require": {
+		"php": ">=5.3.0",
+		"itsgoingd/slim-facades": "dev-master",
+		"slimcontroller/slimcontroller": "0.4.2",
+        "illuminate/database": "4.2.*",
+        "twig/twig": "1.*",
+        "cartalyst/sentry": "~2.1",
+        "ircmaxell/password-compat": "~1.0",
+        "swiftmailer/swiftmailer": "~5.4",
+        "slim/views": "0.1.*"
+    },
+	"autoload": {
+        "psr-4": {
+            "Slimpak\\": "src/Slimpak/",
+            "App\\Controllers\\": "app/controllers/",
+            "App\\Models\\": "app/models"
+        }
+	}
+}

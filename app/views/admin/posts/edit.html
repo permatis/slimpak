@@ -1,0 +1,33 @@
+{% extends "layouts/default.html" %}
+{% block title %} Edit Posts {% endblock %}
+{% block content %}
+    {% include 'layouts/sidebar.html' %}
+    <div id="content">
+        <div class="table-information">
+            <div class="title"> <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp; Edit Posts </div>
+            <div class="right">
+                <a href="{{ baseUrl() }}/admin/posts" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> &nbsp; Back
+                </a>
+            </div>
+        </div>
+        <div class="tables">
+            {% include 'notification/errors.html' %} {% include 'notification/error.html' %} {% include 'notification/success.html' %}
+            <form action="../{{ post.id }}" method="post" class="form-horizontal">
+                <input type="hidden" name="_METHOD" value="PUT">
+                <input type="hidden"  name="token" id="token" value="{{ token }}">
+                <div class="form-group">
+                    <label for="title" class="col-sm-2 control-label">Title</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="title" value="{{ post.title }}" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input type="submit" value="Update" class="btn btn-primary">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

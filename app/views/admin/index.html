@@ -1,0 +1,8 @@
+{% extends "layouts/default.html" %}
+{% block title %} Admin Pages {% endblock %}
+{% block content %}
+{% include 'layouts/sidebar.html' %}
+    <div id="content">
+        <h3>Welcome {{ sentry.first_name | capitalize }} {{ sentry.last_name | capitalize }}</h3>
+    </div>
+{% endblock %}

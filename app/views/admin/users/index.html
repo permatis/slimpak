@@ -1,0 +1,50 @@
+{% extends "layouts/default.html" %}
+{% block title %} Users Pages {% endblock %}
+{% block content %}
+{% include 'layouts/sidebar.html' %}
+    <div id="content">
+        <div class="table-information">
+            <div class="title"> <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>&nbsp; Users Data </div>
+            <div class="right">
+                <a href="users/create" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &nbsp; Add New
+                </a>
+            </div>
+        </div>
+        <div class="tables">
+            <table class="table table-bordered table-condensed table-hover table-striped" id="example">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if (users | length > 0) %}
+                    {% for user in users %}
+                    <tr>
+                        <td>{{ user.first_name }}</td>
+                        <td>{{ user.last_name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>
+                            <a href="users/{{ user.id }}/edit" class="form-edit" title="Edit">
+                                <button type="button" class="btn btn-default btn-xs" aria-label="Left Align">
+                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                </button>
+                            </a>
+                            <form method="post" action="users/{{ user.id }}" class="form-delete">
+                                <input type="hidden" name="_METHOD" value="DELETE">
+                                <button type="submit" class="btn btn-default btn-xs" aria-label="Left Align" title="Delete">
+                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

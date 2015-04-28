@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> {% block title %}{% endblock %} - Slimpak</title>
+	{% include 'layouts/header.html' %}
+</head>
+<body>
+	{% include 'layouts/navbar.html' %}
+	{% block content %}
+	{% endblock %}
+
+	{% include 'layouts/footer.html' %}
+</body>
+</html>
