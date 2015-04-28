@@ -24,5 +24,8 @@
             "App\\Controllers\\": "app/controllers/",
             "App\\Models\\": "app/models"
         }
-	}
+	},
+    "config": {
+        "preferred-install": "dist"
+    }
 }
