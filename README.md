@@ -12,13 +12,9 @@ Coming soon...
 # Installation
 <h3>Install Manually</h3>
 <pre>
-git clone https://github.com/defriblackertz/SlimpaK.git
+git clone https://github.com/defriblackertz/slimpak.git
 </pre>
 
-<h3>Install via Composer</h3>
-<pre>
-composer create-project defriblackertz/SlimpaK --prefer-dist
-</pre>
 
 
 # Setup Permission
