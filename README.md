@@ -13,19 +13,14 @@ Coming soon...
 <h3>Install Manually</h3>
 <pre>
 git clone https://github.com/defriblackertz/slimpak.git
-</pre>
-
-
-
-# Setup Permission
-<pre>
-sudo chgrp -R www-data storage/
-or
-sudo chown -R 755 storage/
+//and then
+composer update
 </pre>
 
 # Configuration and Setup Database
 Configuration file of Slimpak located in <code>config</code> folder, edit the app.php, database.php, mail.php and session.php
+
+You must set <code>config</code> database.php file. After your set this file, you import database from <code>db</code> folder to your database.
 
 #Router
 Router file located in <code>app/router.php</code>.
