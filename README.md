@@ -7,7 +7,11 @@ Slimpak built with Slim Framework in MVC Architecture. Slimpak inspired laravel,
 - Example Sending mail activation and reset password.
 
 # Demo
-Coming soon...
+http://slimpak-defriblackertz.c9.io/
+<pre>
+user : admin@slimpak.com
+password : admin
+</pre>
 
 # Installation
 <h3>Install Manually</h3>
